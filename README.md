@@ -10,6 +10,7 @@ The **Play-Tennis** project is an implementation of a decision tree algorithm to
 
 ## Technologies Used
 - Python
+- Flask
 - NumPy
 - Pandas
 - Scikit-learn
