@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: url('tennis.jpeg') no-repeat center center/cover;
+}
+.content {
+    text-align: center;
+}
+h1 {
+    margin-top: 20%;
+    font-size: 620%;
+    color: #007BFF;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding-bottom: 10%;
+}
+a {
+    margin-top: 2%;
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    font-size: 2.2rem;
+    padding: 1% 5%; /* Padding set in percentages */
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}

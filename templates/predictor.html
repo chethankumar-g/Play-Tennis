@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{{ url_for('static',filename='home.css') }}
+{% endblock %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="form-container text-center">
+        <h1 class="mb-4">Play Tennis Predictor</h1>
+        <p class="mb-4">Select the weather conditions below to find out if you can play tennis today!</p>
+
+        <form id="123" method="POST" class="needs-validation" novalidate>
+            <div class="row g-4">
+                <!-- First Row -->
+                <div class="col-md-6">
+                    <label for="Outlook" class="form-label fw-bold">How is the Weather today?</label>
+                    <select id="Outlook" name="Outlook" class="form-select" required>
+                        <option value="-1">Select an option</option>
+                        <option value="0">Overcast</option>
+                        <option value="1">Rainy</option>
+                        <option value="2">Sunny</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Temperature" class="form-label fw-bold">How is the Temperature?</label>
+                    <select id="Temperature" name="Temperature" class="form-select" required>
+                        <option value="-1">Select an option</option>
+                        <option value="0">Cool</option>
+                        <option value="1">Hot</option>
+                        <option value="2">Mild</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <label for="Humidity" class="form-label fw-bold">How is the Humidity?</label>
+                    <select id="Humidity" name="Humidity" class="form-select" required>
+                        <option value="-1">Select an option</option>
+                        <option value="0">High</option>
+                        <option value="1">Normal</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Wind" class="form-label fw-bold">How is the Wind?</label>
+                    <select id="Wind" name="Wind" class="form-select" required>
+                        <option value="-1">Select an option</option>
+                        <option value="0">Strong</option>
+                        <option value="1">Weak</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Let's Check!</button>
+            </div>
+        </form>
+
+        {% if form_valid %}
+            <div class="container mt-5 p-4 rounded {{ 'bg-danger' if pred == 0 else 'bg-success' }}">
+                <h2 class="text-white">
+                    {% if pred == 0 %}
+                        We can't play tennis today.
+                    {% else %}
+                        We can play tennis today!
+                    {% endif %}
+                </h2>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if form_valid %}
+<script>
+    const form = document.querySelector('form');
+    if (form.dataset.formValid) {
+        form.dataset.formValid = false;
+        document.body.classList.remove('invalid-form');
+    }
+</script>
+{% endif %}
+
+<style>
+    .invalid-form {
+        background-color: gold;
+    }
+</style>
+
+{% endblock %}
