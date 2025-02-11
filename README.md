@@ -6,7 +6,6 @@ The **Play-Tennis** project is an implementation of a decision tree algorithm to
 ## Features
 - Implements a decision tree learning algorithm
 - Uses a small dataset with weather conditions
-- Predicts whether to play tennis based on historical data
 - Demonstrates fundamental machine learning concepts
 
 ## Technologies Used
@@ -14,7 +13,6 @@ The **Play-Tennis** project is an implementation of a decision tree algorithm to
 - NumPy
 - Pandas
 - Scikit-learn
-- Matplotlib (for visualization)
 
 ## Dataset
 The dataset contains weather attributes such as:
@@ -32,7 +30,7 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```sh
-https://github.com/chethankumar-g/Play-Tennis.git
+git clone https://github.com/chethankumar-g/Play-Tennis.git
 cd Play-Tennis
 ```
 
