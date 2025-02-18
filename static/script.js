@@ -1,4 +1,4 @@
-document.getElementById("123").addEventListener("submit", function (event) {
+document.querySelector("form").addEventListener("submit", function (event) {
     // Prevent the form from submitting initially
     event.preventDefault();
 
@@ -23,3 +23,8 @@ document.getElementById("123").addEventListener("submit", function (event) {
         form.submit();
     }
 });
+let btn=document.querySelector("button");
+btn.addEventListener('onclick',() =>{
+    btn.preventDefault();
+})
+console.dir(btn)
