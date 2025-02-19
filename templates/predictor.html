@@ -58,7 +58,7 @@
             </div>
 
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">Let's Check!</button>
+                <button class="btn btn-primary btn-lg">Let's Check!</button>
             </div>
         </form>
 
@@ -72,25 +72,9 @@
                     {% endif %}
                 </h2>
             </div>
+        {% else %}
+            <div></div>
         {% endif %}
     </div>
 </div>
-
-{% if form_valid %}
-<script>
-    const form = document.querySelector('form');
-    if (form.dataset.formValid) {
-        form.dataset.formValid = false;
-        document.body.classList.remove('invalid-form');
-        form.action="";
-    }
-</script>
-{% endif %}
-
-<style>
-    .invalid-form {
-        background-color: gold;
-    }
-</style>
-
 {% endblock %}

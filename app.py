@@ -1,4 +1,4 @@
-from flask import Flask,Blueprint, render_template,url_for,request
+from flask import Flask, render_template,url_for,request
 import numpy as np
 import pickle
 
